@@ -1,0 +1,4 @@
+---
+- src: git@github.com:ecaepp/role_fail2ban.git
+  scm: git
+  name: fail2ban

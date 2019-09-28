@@ -1,0 +1,19 @@
+---
+- name: Create slack_notify script
+  template:
+    src: templates/slack_notify.sh.j2
+    dest: /usr/bin/slack_notify
+    owner: root
+    group: root
+    mode: 0544
+
+- name: Copy conf files to server
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - { src: files/jail.local, dest: /etc/fail2ban/fail2ban.d/slack_notify.local }
+    - { src: files/slack.conf, dest: /etc/fail2ban/action.d/slack.conf }

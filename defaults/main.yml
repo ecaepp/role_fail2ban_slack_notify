@@ -1,0 +1,5 @@
+---
+slack_webhook: https://hooks.slack.com/services/<your_webhook_url>
+slack_channel: "#alerts"
+slack_user: fail2ban
+slack_emojii: ":cop:"

@@ -1,0 +1,6 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - role: fail2ban
+    - role: role_fail2ban_slack_notification

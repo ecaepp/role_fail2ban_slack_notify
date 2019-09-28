@@ -1,0 +1,26 @@
+---
+dependency:
+  name: galaxy
+  role_file: ./requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: molecule_fail2ban_slack_notification
+    image: ubuntu:bionic
+provisioner:
+  name: ansible
+  options:
+    vv: true
+    diff: true
+  config_options:
+    defaults:
+      callback_whitelist: profile_roles, profile_tasks
+      stdout_callback: yaml
+  lint:
+    name: ansible-lint
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

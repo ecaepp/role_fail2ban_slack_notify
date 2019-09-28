@@ -1,0 +1,4 @@
+action_with_slack_notification = %(banaction)s[name=%(__name__)s, bantime="%(bantime)s", port="%(port)s", protocol="%(protocol)s", chain="%(chain)s"]
+                                 slack[name=%(__name__)s]                              
+
+action = %(action_with_slack_notification)s
